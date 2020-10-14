@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <iterator>
 #include <unordered_map>
+#include <optional>
 
 #include "contants.h"
 
@@ -16,25 +17,26 @@ PlayerPieceAllocator* PlayerPieceAllocator::getPlayerPieceAllocatorInstance() {
 	return instance;
 }
 
+void PlayerPieceAllocator::deletePlayerPieceAllocatorInstance() {
+	delete instance;
+}
+
 PlayerPieceAllocator::PlayerPieceAllocator() : piecesAvailabilityMap(std::unordered_map<Piece::Type, bool>()) {
 	for (Piece::Type peice : Piece::ALL) piecesAvailabilityMap[peice] = AVAILABLE;
 }
 
-std::vector<Piece::Type> PlayerPieceAllocator::getAllPieces() {
+const std::vector<Piece::Type>& PlayerPieceAllocator::getAllPieces() {
 	return Piece::ALL;
 }
 
-std::vector<Piece::Type> PlayerPieceAllocator::getAvailablePieces() {
-	auto availPieces = std::vector<Piece::Type>();
-	auto isAvailable = [this](Piece::Type peice) { return piecesAvailabilityMap[peice]; };
-	std::copy_if(Piece::ALL.begin(), Piece::ALL.end(), std::back_inserter(availPieces), isAvailable);
-	return availPieces;
+const std::unordered_map<Piece::Type, bool>& PlayerPieceAllocator::getPiecesAvailability() {
+	return piecesAvailabilityMap;
 }
 
-PlayerPiece PlayerPieceAllocator::takePiece(Piece::Type piece) {
-	if (!piecesAvailabilityMap[piece]) throw "PLAYER PIECE TAKEN EXCEPTION";
+std::optional<PlayerPiece> PlayerPieceAllocator::takePiece(Piece::Type piece) {
+	if (!piecesAvailabilityMap[piece]) return {};
 	piecesAvailabilityMap[piece] = NOT_AVAILABLE;
-	return PlayerPiece(piece);
+	return std::optional<PlayerPiece> { PlayerPiece(piece) };
 }
 
 PlayerPiece::PlayerPiece(Piece::Type piece) : piece(piece) {}

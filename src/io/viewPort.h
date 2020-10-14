@@ -6,6 +6,7 @@
 class ViewPort {
 public:
 	void notifyPlayer(std::string) const;
+	void displaySelectionError() const;
 };
 
 #endif

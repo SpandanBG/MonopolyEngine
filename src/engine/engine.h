@@ -20,7 +20,7 @@ private:
 	Die gameDie;
 
 	void initiatePlayers();
-	Player createPlayer();
+	Player createPlayer(PlayerPieceAllocator*);
 
 public:
 	Engine(const Controller&, const ViewPort&);
