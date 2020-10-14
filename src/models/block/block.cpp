@@ -5,6 +5,6 @@
 #include "models/block/block.h"
 
 Block::Block(std::string blockName, Color blockColor) {
-    name = blockName;
-    color = blockColor;
+	name = blockName;
+	color = blockColor;
 }

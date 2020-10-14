@@ -6,6 +6,8 @@
 #include "io/viewPort.h"
 #include "io/controller.h"
 
+#include "assets/playerPieces.h"
+
 #include "models/player/player.h"
 #include "models/board/board.h"
 #include "models/die/die.h"
@@ -30,9 +32,9 @@ void Engine::initiatePlayers() {
 
 Player Engine::createPlayer() {
 	// TODO : Make actual player
-	// TODO : Handle exception thrown by takePeice()
-	PlayerPeice* playerPeices = PlayerPeice::getPlayerPeiceInstance();
-	auto availPeices = playerPeices->getAvailablePeices();
-	playerPeices->takePeice(availPeices[0]);
-	return Player(availPeices[0], gameDie);
+	// TODO : Handle exception thrown by takePiece()
+	PlayerPieceAllocator* playerPieces = PlayerPieceAllocator::getPlayerPieceAllocatorInstance();
+	auto availPieces = playerPieces->getAvailablePieces();
+	auto piece = playerPieces->takePiece(availPieces[0]);
+	return Player(piece, gameDie);
 }

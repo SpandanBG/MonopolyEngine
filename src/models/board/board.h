@@ -7,12 +7,12 @@
 
 class Board {
 private:
-    std::vector<Block> blocks;
+	std::vector<Block> blocks;
 
 public:
-    Board();
-    int getNewPosition(int, int, int);
-    Block* getBlockByPosition(int);
+	Board();
+	int getNewPosition(int, int, int);
+	Block* getBlockByPosition(int);
 };
 
 #endif

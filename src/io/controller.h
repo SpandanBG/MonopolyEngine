@@ -5,10 +5,10 @@
 
 class Controller {
 private:
-	const ViewPort &viewPort;
+	const ViewPort& viewPort;
 
 public:
-	Controller(const ViewPort &);
+	Controller(const ViewPort&);
 	int getNumberOfPlayers() const;
 };
 

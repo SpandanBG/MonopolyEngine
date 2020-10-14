@@ -2,7 +2,7 @@
 
 #include "controller.h"
 
-Controller::Controller(const ViewPort  &viewPort) : viewPort(viewPort) {}
+Controller::Controller(const ViewPort& viewPort) : viewPort(viewPort) {}
 
 int Controller::getNumberOfPlayers() const {
 	int numberOfPlayers;

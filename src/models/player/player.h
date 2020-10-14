@@ -3,32 +3,32 @@
 
 #include <utility>
 
-#include "assets/playerPeices.h"
+#include "assets/playerPieces.h"
 
 #include "models/die/die.h"
 
 class Player {
 private:
-    PeiceTypes peiceType;
-    Die& die;
+	PlayerPiece peiceType;
+	Die& die;
 
-    int money, currentBoardPosition, turns;
+	int money, currentBoardPosition, turns;
 
 public:
-    Player(PeiceTypes, Die&);
+	Player(PlayerPiece, Die&);
 
-    std::pair<int, int> throwDice();
+	std::pair<int, int> throwDice();
 
-    void creditMoney(int);
-    void debitMoney(int);
+	void creditMoney(int);
+	void debitMoney(int);
 
-    int getPosition();
-    void setPosition(int);
+	int getPosition();
+	void setPosition(int);
 
-    bool hasTurns();
-    void setTurns(int);
-    void addTurns(int);
-    void endTurn();
+	bool hasTurns();
+	void setTurns(int);
+	void addTurns(int);
+	void endTurn();
 };
 
 #endif

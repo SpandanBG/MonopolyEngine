@@ -12,4 +12,7 @@ const int NO_PLAYERS = 0;
 const int MIN_DIE_VALUE = 1;
 const int MAX_DIE_VALUE = 6;
 
+const bool AVAILABLE = true;
+const bool NOT_AVAILABLE = false;
+
 #endif

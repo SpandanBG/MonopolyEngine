@@ -7,11 +7,11 @@
 
 class Block {
 private:
-    std::string name;
-    Color color;
+	std::string name;
+	Color color;
 
 public:
-    Block(std::string name, Color color);
+	Block(std::string name, Color color);
 };
 
 #endif

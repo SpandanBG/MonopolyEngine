@@ -2,11 +2,11 @@
 #define COLORS_H
 
 enum class Color {
-    RED,
-    BLUE,
-    YELLOW,
-    GREEN,
-    NO_COLOR
+	RED,
+	BLUE,
+	YELLOW,
+	GREEN,
+	NO_COLOR
 };
 
 #endif

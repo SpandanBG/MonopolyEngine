@@ -3,11 +3,11 @@
 
 class Die {
 private:
-    int minLimit, maxLimit;
+	int minLimit, maxLimit;
 
 public:
-    Die();
-    int throwDie();
+	Die();
+	int throwDie();
 };
 
 #endif
