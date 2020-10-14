@@ -9,13 +9,13 @@
 
 class Player {
 private:
-    PlayerPeices peiceType;
+    PeiceTypes peiceType;
     Die& die;
 
     int money, currentBoardPosition, turns;
 
 public:
-    Player(PlayerPeices, Die&);
+    Player(PeiceTypes, Die&);
 
     std::pair<int, int> throwDice();
 

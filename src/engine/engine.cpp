@@ -30,5 +30,9 @@ void Engine::initiatePlayers() {
 
 Player Engine::createPlayer() {
 	// TODO : Make actual player
-	return Player(PlayerPeices::DOG, gameDie);
+	// TODO : Handle exception thrown by takePeice()
+	PlayerPeice* playerPeices = PlayerPeice::getPlayerPeiceInstance();
+	auto availPeices = playerPeices->getAvailablePeices();
+	playerPeices->takePeice(availPeices[0]);
+	return Player(availPeices[0], gameDie);
 }

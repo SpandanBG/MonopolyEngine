@@ -9,7 +9,7 @@
 
 #include "models/die/die.h"
 
-Player::Player(PlayerPeices peice, Die& die) : peiceType(peice), die(die) {
+Player::Player(PeiceTypes peice, Die& die) : peiceType(peice), die(die) {
     money = INITIAL_PLAYER_MONEY;
     currentBoardPosition = INITIAL_PLAYER_POSITION;
     turns = NO_TURNS;
